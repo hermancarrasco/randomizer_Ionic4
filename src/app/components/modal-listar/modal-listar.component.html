@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab2" (click)="cerrarModal()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{datos?.nombre}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding="">
+
+<ul>
+  <li *ngFor="let item of datos?.items">
+    {{item?.item}}
+  </li>
+</ul>
+
+<div text-center="">
+  <p style="font-size: 100px">{{valor}}</p>
+</div>
+
+
+<ion-button expand="block" fill="outline" (click)="randomizar()">Randomizar</ion-button>
+</ion-content>

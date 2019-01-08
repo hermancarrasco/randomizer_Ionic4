@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModalAgregar()">Agregar</ion-button>
+    </ion-buttons>
     <ion-title>
-      Tab Two
+      Random Items
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list *ngIf="itemsVar">
+    <ion-item *ngFor="let item of itemsVar; let i = index" button (click)="presentModalLista(i)">
+      {{item.nombre }}
+    </ion-item>
+  </ion-list>
+</ion-content>
